@@ -1,0 +1,31 @@
+package com.accenture;
+
+abstract class Animal {
+	    public abstract void makeSound();
+	}
+
+	class Cat extends Animal {
+	    @Override
+	    public void makeSound() {
+	        System.out.println("Meow");
+	    }
+	}
+
+	class Dog extends Animal {
+	    @Override
+	    public void makeSound() {
+	        System.out.println("Woof");
+	    }
+	}
+
+public class AnimalHierarchy {
+		 public static void main(String[] args) {
+		        Animal cat = new Cat();
+		        cat.makeSound();
+
+		        Animal dog = new Dog();
+		        dog.makeSound();
+		    }
+		}
+	
+
