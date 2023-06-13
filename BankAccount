@@ -1,0 +1,58 @@
+package com.accenture;
+
+public class BankAccount {
+	 private String accountNumber;
+	    private double balance;
+	    private String ownerName;
+
+	    // Constructor
+	    public BankAccount(String accountNumber, double balance, String ownerName) {
+	        this.accountNumber = accountNumber;
+	        this.balance = balance;
+	        this.ownerName = ownerName;
+	    }
+
+	    // Method to deposit money into the account
+	    public void deposit(double amount) {
+	        balance += amount;
+	        System.out.println("Deposit of $" + amount + " successful.");
+	    }
+
+	    // Method to withdraw money from the account
+	    public void withdraw(double amount) {
+	        if (balance >= amount) {
+	            balance -= amount;
+	            System.out.println("Withdrawal of $" + amount + " successful.");
+	        } else {
+	            System.out.println("Insufficient funds. Withdrawal failed.");
+	        }
+	    }
+
+	    // Method to get the current balance
+	    public double getBalance() {
+	        return balance;
+	    }
+
+	    // Method to display account information
+	    public void displayAccountInfo() {
+	        System.out.println("Account Number: " + accountNumber);
+	        System.out.println("Owner Name: " + ownerName);
+	        System.out.println("Balance: $" + balance);
+	    }
+
+	    // Main method for testing
+	    public static void main(String[] args) {
+	        // Create a BankAccount object
+	        BankAccount account = new BankAccount("123456789", 1000.0, "John Doe");
+
+	        // Deposit money
+	        account.deposit(500.0);
+
+	        // Withdraw money
+	        account.withdraw(200.0);
+
+	        // Display account information
+	        account.displayAccountInfo();
+	    }
+	}
+
