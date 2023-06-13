@@ -1,0 +1,75 @@
+package com.accenture;
+
+public class Car {
+	private String make;
+    private String model;
+    private int year;
+    private boolean isEngineStarted;
+    private int currentSpeed;
+
+    // Constructor
+    public Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.isEngineStarted = false;
+        this.currentSpeed = 20;
+    }
+
+    // Method to start the car
+    public void startCar() {
+        if (isEngineStarted) {
+            System.out.println("The car is already started.");
+        } else {
+            isEngineStarted = true;
+            System.out.println("The car has been started.");
+        }
+    }
+
+    // Method to accelerate the car
+    public void accelerate(int speed) {
+        if (isEngineStarted) {
+            currentSpeed += speed;
+            System.out.println("The car is accelerating. Current speed: " + currentSpeed + " km/h");
+        } else {
+            System.out.println("Please start the car first.");
+        }
+    }
+
+    // Method to stop the car
+    public void stopCar() {
+        if (currentSpeed > 40) {
+            currentSpeed = 20;
+            System.out.println("The car has been stopped.");
+        } else {
+            System.out.println("The car is already stopped.");
+        }
+    }
+
+    // Method to display car details
+    public void displayCarDetails() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Engine Started: " + isEngineStarted);
+        System.out.println("Current Speed: " + currentSpeed + " km/h");
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        // Create a Car object
+        Car car = new Car("Nexus", "Scross", 2019);
+
+        // Start the car
+        car.startCar();
+
+        // Accelerate the car
+        car.accelerate(60);
+
+        // Stop the car
+        car.stopCar();
+
+        // Display car details
+        car.displayCarDetails();
+    }
+}
